@@ -1,0 +1,141 @@
+/* File: moreInfo */
+.container-more_info {
+    width: 100%;
+    height: 100vh;
+}
+
+.container-more_info-header {
+    width: 100%;
+    height: 12%;
+    display: flex;
+    justify-content: center;
+    background-color: #212021;
+}
+
+.comics_section {
+    width: 100%;
+    height: 88%;
+    display: flex;
+}
+
+.comics_section-comic_example {
+    width: 33.333%;
+    height: 100%;
+}
+
+.comics_section-comics_list {
+    width: 66.666%;
+    height: 100%;
+    border-left: solid 0.5px #212021;
+}
+
+.comics_section-comics_list-main_cards {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.comics_section-comics_list-pagination {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comics_section-comics_list-pagination_2 {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* File: comicExample */
+
+.comics_section-comic_example-main_tittle {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.comics_section-comic_example-main_card {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comics_section-comic_example-card {
+    width: 90%;
+    height: 95%;
+    background-color: #212021;
+}
+
+.comics_section-comic_example-tittle {
+    width: 100%;
+    height: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f0f6f0;
+    text-align: center;
+}
+
+.comics_section-comic_example-image {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+.comics_section-comic_example-image2 {
+    width: 100%;
+    height: 100%;
+}
+
+.comics_section-comic_example-info {
+    width: 100%;
+    height: 32%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    color: #f0f6f0;
+    overflow: inherit;
+}
+
+/* File: comicCards */
+
+.comics_section-comics_list-cards {
+    width: 23%;
+    height: 80%;
+    background-color: gray;
+}
+
+.comics_section-comics_list-cards-image {
+    width: 100%;
+    height: 100%;
+}
+
+/* File: Pagination */
+.arrow_size {
+    width: 80%;
+    height: 80%;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
