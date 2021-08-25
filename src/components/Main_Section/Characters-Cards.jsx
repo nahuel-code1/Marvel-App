@@ -9,10 +9,7 @@ export default function CharactersCards ({charactersData}) {
     return (
         <div className="characters_card">
             
-            <Link to={{
-            pathname: "/more",
-            state: { moreData: charactersData }
-            }}>
+            <Link to={`/comics_info/${charactersData.id}`}>
                
                 <div className="character_image">
                     <img src={`${image_path}.${image_extension}`} alt={charactersData.name} />

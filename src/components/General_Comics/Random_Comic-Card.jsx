@@ -35,10 +35,7 @@ export default function RandomComicCard ({data, characterName}) {
 
         <div className="comics_section-comic_example-main_card">
                 <div className="comics_section-comic_example-card">
-                    <Link to={{
-                    pathname: "/comic_info",
-                    state: { comic_info: randomComic }
-                    }}>
+                    <Link to={`/comics_info/${randomComic.id}/all_data`}>
                     {randomComic &&
                         <>
                             <div className="comics_section-comic_example-tittle">

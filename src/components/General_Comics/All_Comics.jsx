@@ -2,21 +2,19 @@ import React, { useState, useEffect } from 'react';
 import AllComicsCards from "./All_Comics-Cards";
 import RandomComicCard from "./Random_Comic-Card";
 import Pagination from "../pagination";
-import { useLocation } from 'react-router-dom';
-import { showMarvelComics, getComicForExample } from './general_comics.services';
+import { useParams } from 'react-router-dom';
+import { showMarvelComics, getComicForExample, getCharacterName } from './general_comics.services';
 import "./general_comics.css"
 
 export default function AllComics () {
-    const location = useLocation();
-    const data = location.state?.moreData;
-
-    const comicUrl = data.comics.collectionURI;
-    const characterName = data.name;
-
+    const params = useParams();
+    const characterId = params.id;
+ 
     // ---------------  UseState Section  ---------------
 
     const [ comicsData, setComicsData ] = useState("");
     const [ comicsDataForExample, setComicsDataForExample ] = useState("");
+    const [ characterName, setCharacterName ] = useState("");
     const [ offsetNumber, setOffsetNumber ] = useState(0);
     const [ total, setTotal ] = useState("");
 
@@ -25,18 +23,34 @@ export default function AllComics () {
     // ---------------  UseEffect Section  ---------------
 
     useEffect(() => {
-        if (comicUrl) {
-            showMarvelComics(comicUrl, offsetNumber)
+        if (characterId) {
+            try {
+                getCharacterName(characterId)
+                    .then(resp => {
+                        setCharacterName(resp.data.data.results[0].name)
+                    })
+            } catch (error) {
+                console.log(error)
+            }
+
+            try {
+                getComicForExample(characterId)
+                    .then(resp => setComicsDataForExample(resp.data.data.results))
+            } catch (error) {
+                console.log(error)
+            }
+        }
+    }, [characterId])
+
+    useEffect(() => {
+        if (characterId) {
+            showMarvelComics(characterId, offsetNumber)
                 .then(resp => {
                     setTotal(resp.data.data.total)
                     setComicsData(resp.data.data.results);
                 })
-            getComicForExample(comicUrl)
-                .then(resp => {
-                    setComicsDataForExample(resp.data.data.results);
-                })
         }
-    }, [comicUrl, offsetNumber])
+    }, [characterId, offsetNumber])
 
     // ----------------------- || ------------------------
 

@@ -9,11 +9,11 @@ export default function Routes() {
         <div>
             <Switch>
 
-                <Route path="/comic_info">
+                <Route path="/comics_info/:id/all_data">
                     <ComicInfo />
                 </Route>
 
-                <Route path="/more">
+                <Route path="/comics_info/:id">
                     <AllComics />
                 </Route>
 

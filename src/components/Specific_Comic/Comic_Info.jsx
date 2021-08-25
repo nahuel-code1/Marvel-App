@@ -1,11 +1,11 @@
 import React from 'react';
 import "./specific_comic.css"
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 export default function ComicInfo () {
-    const location = useLocation();
-    const comic_info = location.state?.comic_info;
-    console.log("comic infp;",comic_info);
+    const params = useParams();
+
+    console.log("comic infp;", params);
     
     return (
         <div className="mantenimiento">
